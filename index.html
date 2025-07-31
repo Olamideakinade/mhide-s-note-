@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Auth Container -->
+    <div id="auth-container" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 id="auth-title">Welcome to Notes</h1>
+                <p id="auth-subtitle">Sign in to continue</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <span class="input-underline"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <span class="input-underline"></span>
+                </div>
+                <button type="submit" class="auth-btn">Sign In</button>
+                <p class="auth-switch">Don't have an account? <span id="show-register">Sign up</span></p>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form hidden">
+                <div class="input-group">
+                    <input type="text" id="register-name" placeholder="Full Name" required>
+                    <span class="input-underline"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <span class="input-underline"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <span class="input-underline"></span>
+                </div>
+                <button type="submit" class="auth-btn">Create Account</button>
+                <p class="auth-switch">Already have an account? <span id="show-login">Sign in</span></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div id="dashboard-container" class="dashboard-container hidden">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>My Notes</h1>
+                <div class="header-actions">
+                    <button id="add-note-btn" class="btn btn-primary">
+                        <span>+</span> New Note
+                    </button>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Notes Grid -->
+        <main class="notes-main">
+            <div id="notes-grid" class="notes-grid">
+                <!-- Notes will be dynamically loaded here -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">📝</div>
+                <h3>No notes yet</h3>
+                <p>Create your first note to get started</p>
+                <button class="btn btn-primary" onclick="showAddNoteModal()">Create Note</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Note Modal -->
+    <div id="note-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Add Note</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <form id="note-form" class="modal-form">
+                <input type="hidden" id="note-id">
+                <div class="input-group">
+                    <input type="text" id="note-title" placeholder="Note title..." required>
+                    <span class="input-underline"></span>
+                </div>
+                <div class="input-group">
+                    <textarea id="note-content" placeholder="Write your note here..." rows="10" required></textarea>
+                    <span class="input-underline"></span>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-note" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

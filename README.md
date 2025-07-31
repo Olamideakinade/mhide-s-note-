@@ -1,34 +1,46 @@
-# 📝 Animated Notes App — PHP + GSAP + MySQL
+# Notes App
 
-A fully functional, beautifully animated **Notes Management Web App** built with **vanilla PHP** for the backend and **HTML/CSS/JavaScript (GSAP)** for the frontend. This project showcases clean user authentication, secure CRUD operations, session handling, and smooth client-side animations — all without any frameworks.
+A beautiful, secure, and responsive notes application built with vanilla PHP backend and animated HTML/CSS/JS frontend using GSAP.
 
-## 🚀 Features
+## Features
 
-### 🔐 User Authentication
-- Register with email and password
-- Login with hashed password validation
-- Secure session tracking
-- Logout and session cleanup
+### Backend (PHP)
+- 🔐 Secure user authentication (register, login, logout)
+- 🛡️ Session-based authentication
+- 🔒 Password hashing with PHP's `password_hash()`
+- 🛡️ SQL injection protection with prepared statements
+- 📝 Full CRUD operations for notes
+- 🗄️ MySQL/SQLite database support with automatic fallback
+- 📡 Clean JSON API responses
+- ✨ Input validation and sanitization
 
-### 📓 Notes Management (CRUD)
-- Add a new note (title + content)
-- View your personal notes
-- Edit your existing notes
-- Delete notes
-- Notes are scoped per user
+### Frontend (HTML/CSS/JS + GSAP)
+- 🎨 Beautiful, modern UI design
+- 📱 Fully responsive (desktop & mobile)
+- ✨ Smooth GSAP animations throughout
+- 🚀 Single-page application experience
+- 🔄 Real-time updates without page reloads
+- 💫 Loading animations and transitions
+- 🎯 Toast notifications for user feedback
+- 🎭 Modal dialogs for note editing
 
-### 💥 Animated Frontend (GSAP Powered)
-- Animated login/register forms
-- Smooth page transitions and interactions
-- Fetch API-powered UI (no page reloads)
-- Toast notifications with motion effects
-- Loading animations on data fetch
-- Mobile-responsive design
+## Installation & Setup
 
-### 🛠️ Tech Stack
-- Backend: **PHP (Vanilla)**  
-- Database: **MySQL** or **SQLite**  
-- Frontend: **HTML, CSS, JavaScript, GSAP**
+### Prerequisites
+- PHP 7.4+ with PDO extension
+- Web server (Apache/Nginx) or PHP built-in server
+- MySQL (optional - SQLite fallback included)
 
-### 📁 Project Structure
+### Quick Start
+
+1. **Clone or download the files** to your web server directory
+
+2. **Configure database** (optional):
+   - Edit `db.php` to set your MySQL credentials
+   - If MySQL fails, SQLite will be used automatically
+
+3. **Set permissions** (for SQLite):
+   ```bash
+   chmod 666 notes_app.db  # If using SQLite
+   chmod 666 .             # Directory permissions
 
